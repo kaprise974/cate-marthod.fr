@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caté des enfants · Paroisse Notre-Dame des Cimes · Marthod</title>
+<meta name="description" content="Catéchisme des enfants de la paroisse Notre-Dame des Cimes de Marthod : un lundi par mois, 16h30-18h30, goûter partagé. Inscriptions ouvertes !">
+</head>
+<body>
+
+<div id="kt-root" style="font-family:'Comic Sans MS','Chalkboard SE','Segoe Print',cursive; background:#FBF5E9; border-radius:8px; position:relative; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.2); color:#5b4636; max-width:760px; margin:0 auto;">
+<style>
+  body { margin:0; padding:16px; background:#EFE7D8; }
+  #kt-root button, #kt-root input, #kt-root select { font:inherit; }
+  #kt-root svg text { font-family:'Comic Sans MS','Chalkboard SE','Segoe Print',cursive; }
+  .kt-tab { display:inline-block; border:3px solid #3d5a80; background:#fffdf7; color:#3d5a80; border-radius:14px; padding:8px 18px; font-weight:bold; font-size:clamp(13px,2.6vw,16px); cursor:pointer; transform:rotate(-.6deg); box-shadow:3px 3px 0 rgba(61,90,128,.25); transition:all .15s; margin:4px 3px; }
+  .kt-tab:hover { transform:rotate(0deg) scale(1.04); }
+  .kt-tab.active { background:#3d5a80; color:#fffdf7; transform:rotate(.6deg); }
+  .kt-page { display:none; animation:ktpop .35s ease; }
+  .kt-page.active { display:block; }
+  @keyframes ktpop { from { opacity:0; transform:translateY(10px) rotate(.3deg);} to { opacity:1; transform:none;} }
+  .kt-card { background:#fffdf7; border:3px dashed #c9a86a; border-radius:16px; padding:14px; transform:rotate(-.5deg); box-shadow:3px 4px 0 rgba(160,130,80,.22); }
+  .kt-card:nth-child(even) { transform:rotate(.6deg); }
+  .kt-field { width:100%; box-sizing:border-box; border:3px solid #c9a86a; border-radius:12px; padding:10px 14px; background:#fff; color:#5b4636; font-size:16px; outline:none; }
+  .kt-field:focus { border-color:#3d5a80; }
+  .kt-label { font-weight:bold; color:#3d5a80; display:block; margin:12px 0 4px; text-align:left; }
+  .kt-btn { display:inline-block; background:#c65d3b; color:#fff; border:none; border-radius:50px; padding:13px 34px; font-size:clamp(16px,3.4vw,20px); font-weight:bold; cursor:pointer; box-shadow:0 5px 0 #a34a2c; transform:rotate(-.5deg); transition:all .15s; }
+  .kt-btn:hover { transform:rotate(0deg) scale(1.05); }
+  .kt-btn:active { transform:translateY(3px); box-shadow:0 2px 0 #a34a2c; }
+  .confetti { position:absolute; top:-12px; font-size:20px; animation:ktfall 2.6s linear infinite; }
+  @keyframes ktfall { to { transform:translateY(340px) rotate(360deg); opacity:0; } }
+</style>
+
+<div style="position:absolute; inset:0; opacity:.5; pointer-events:none; background:repeating-linear-gradient(0deg, transparent 0 3px, rgba(180,160,120,.06) 3px 4px);"></div>
+
+<svg style="position:absolute; bottom:0; left:0; width:100%; height:150px; opacity:.16; pointer-events:none;" viewBox="0 0 700 150" preserveAspectRatio="none">
+  <path d="M0,150 L90,55 L140,110 L220,30 L300,120 L380,45 L460,125 L540,60 L620,115 L700,70 L700,150 Z" fill="#7aa5d8"/>
+  <path d="M216,38 L220,30 L226,40 L221,45 Z M376,52 L380,45 L386,54 L380,59 Z" fill="#fff"/>
+</svg>
+
+<div style="position:relative; padding:26px 18px 22px; text-align:center;">
+
+  <div style="display:inline-block; background:#fffdf7; border:3px solid #7aa5d8; border-radius:50px; padding:7px 22px; color:#3d5a80; font-weight:bold; font-size:clamp(13px,2.6vw,16px); transform:rotate(-.5deg); box-shadow:3px 3px 0 rgba(122,165,216,.35);">
+    ⛪ Paroisse Notre-Dame des Cimes · Marthod
+  </div>
+  <h1 style="margin:12px 0 0; font-size:clamp(28px,6vw,44px); color:#3d5a80; transform:rotate(-1deg); text-shadow:2px 2px 0 #e8dcc0;">
+    Le Caté des enfants 🐑
+  </h1>
+  <p style="margin:6px 0 12px; color:#9c6644; font-weight:bold; font-size:clamp(14px,2.8vw,18px); transform:rotate(.5deg);">
+    Un lundi par mois · 16h30 – 18h30 · goûter partagé 🍪
+  </p>
+
+  <div style="margin:4px 0 16px;">
+    <button class="kt-tab active" data-page="accueil" onclick="ktGo('accueil', this)">🏠 Accueil</button>
+    <button class="kt-tab" data-page="activites" onclick="ktGo('activites', this)">🎨 Nos activités</button>
+    <button class="kt-tab" data-page="dates" onclick="ktGo('dates', this)">🗓️ Les dates</button>
+    <button class="kt-tab" data-page="inscription" onclick="ktGo('inscription', this)">📝 Inscription</button>
+  </div>
+
+  <div id="page-accueil" class="kt-page active">
+    <svg viewBox="0 0 680 240" style="width:100%; max-width:560px; height:auto;">
+      <g transform="translate(90,105)">
+        <path d="M0,-52 L9,-13 L46,-17 L17,5 L29,41 L0,20 L-29,41 L-17,5 L-46,-17 L-9,-13 Z" fill="#ffd166" stroke="#e09f3e" stroke-width="3.5" stroke-linejoin="round"/>
+      </g>
+      <g transform="translate(255,115)">
+        <path d="M-42,14 q-10,-3 -9,-14 q-9,-7 0,-16 q-1,-12 12,-11 q4,-10 16,-7 q7,-9 17,-3 q10,-6 16,3 q12,-2 13,9 q10,4 6,14 q7,9 -1,16 q1,10 -10,11 q-3,9 -14,7 q-6,7 -15,3 q-9,6 -16,-1 q-12,1 -13,-10 Z" fill="#fffaf0" stroke="#b08d57" stroke-width="3.5" stroke-linejoin="round"/>
+        <ellipse cx="-37" cy="19" rx="12" ry="14" fill="#6f5b45" stroke="#54452f" stroke-width="3" transform="rotate(-15 -37 19)"/>
+        <circle cx="-40" cy="16" r="2" fill="#fff"/><circle cx="-44" cy="25" r="2.2" fill="#3e3325"/>
+        <path d="M-24,32 l-2,14 M-8,35 l-1,14 M12,35 l1,14 M26,32 l2,14" stroke="#6f5b45" stroke-width="4" stroke-linecap="round"/>
+      </g>
+      <g transform="translate(425,105)">
+        <path d="M-40,7 C-27,-16 8,-21 27,-7 C40,3 43,18 33,26 C20,38 -6,38 -23,29 C-37,22 -46,16 -40,7 Z" fill="#fff" stroke="#7d8fa6" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M-13,-5 C4,-18 24,-15 30,-2 C20,6 1,9 -11,4 C-16,1 -17,-3 -13,-5 Z" fill="#dbe7f5" stroke="#7d8fa6" stroke-width="3"/>
+        <circle cx="-33" cy="-5" r="11" fill="#fff" stroke="#7d8fa6" stroke-width="3.5"/>
+        <path d="M-43,-6 l-9,3 9,4 Z" fill="#f4a259" stroke="#d97706" stroke-width="2"/>
+        <circle cx="-34" cy="-8" r="2" fill="#3a4a5a"/>
+        <path d="M35,15 l16,-6 -4,10 14,-3 -10,9" fill="#fff" stroke="#7d8fa6" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <g transform="translate(570,120)">
+        <circle cx="0" cy="-62" r="24" fill="none" stroke="#e9c46a" stroke-width="4" stroke-dasharray="5 4"/>
+        <path d="M-34,-55 C-39,-12 -44,40 -37,78 C-17,86 17,86 37,78 C44,40 39,-12 34,-55 C22,-77 -22,-77 -34,-55 Z" fill="#7aa5d8" stroke="#4d6fa0" stroke-width="3.5"/>
+        <path d="M-24,-53 C-28,-12 -31,40 -26,74 C-11,80 11,80 26,74 C31,40 28,-12 24,-53 C14,-68 -14,-68 -24,-53 Z" fill="#a9c6ea" opacity=".85"/>
+        <ellipse cx="0" cy="-50" rx="13" ry="15" fill="#ffe3cf" stroke="#d9a066" stroke-width="3"/>
+        <path d="M-7,-54 q3,4 6,0 M1,-54 q3,4 6,0" fill="none" stroke="#5b4636" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M-4,-44 q4,4 8,0" fill="none" stroke="#c65d3b" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M-17,-40 C-22,-6 -24,40 -22,76 C-7,82 7,82 22,76 C24,40 22,-6 17,-40 C7,-46 -7,-46 -17,-40 Z" fill="#5e8ec7" stroke="#4d6fa0" stroke-width="3.5"/>
+        <ellipse cx="0" cy="-25" rx="9" ry="6" fill="#ffe3cf" stroke="#d9a066" stroke-width="2.5"/>
+        <path d="M-6,-21 q-8,14 0,28" fill="none" stroke="#8a6d3b" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="-10" cy="-8" r="2" fill="#d4a373"/><circle cx="-11" cy="0" r="2" fill="#d4a373"/><circle cx="-8" cy="7" r="2" fill="#d4a373"/>
+      </g>
+      <g stroke="#c9a86a" stroke-width="3" stroke-linecap="round">
+        <path d="M340,120 v20 M330,130 h20"/>
+      </g>
+    </svg>
+
+    <div class="kt-card" style="max-width:520px; margin:10px auto 0; font-size:clamp(14px,2.8vw,17px); line-height:1.8;">
+      Bienvenue sur le site du <b>catéchisme</b> de Marthod !<br>
+      Ici, on apprend à connaître <b>Jésus</b> en s'amusant :
+      jeux, chansons, dessins, prière… et toujours un
+      <b>bon goûter</b> à la fin ! 🍪<br>
+      <span style="color:#c65d3b; font-weight:bold;">Alors, tu viens ? 😄</span>
+    </div>
+
+    <button class="kt-btn" style="margin-top:16px;" onclick="ktGo('inscription', document.querySelector('[data-page=inscription]'))">Je m'inscris ! 🚀</button>
+  </div>
+
+  <div id="page-activites" class="kt-page">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; max-width:620px; margin:0 auto;">
+      <div class="kt-card">
+        <svg viewBox="0 0 60 60" style="width:52px; height:52px;"><circle cx="30" cy="30" r="22" fill="#ffd166" stroke="#e09f3e" stroke-width="3"/><path d="M14,24 q16,-10 32,0 M14,36 q16,10 32,0 M30,8 v44" fill="none" stroke="#e09f3e" stroke-width="2.5"/></svg>
+        <div style="font-weight:bold; color:#3d5a80; margin-top:6px;">Jeux &amp; team</div>
+        <div style="font-size:14px;">Grand jeux, cache-cache et rires en équipe !</div>
+      </div>
+      <div class="kt-card">
+        <svg viewBox="0 0 60 60" style="width:52px; height:52px;"><path d="M38,10 v26 a8,8 0 1 1 -4,-7 V18 l-16,4 v22 a8,8 0 1 1 -4,-7 V18 Z" fill="#e9c46a" stroke="#b0892e" stroke-width="2.5" stroke-linejoin="round"/></svg>
+        <div style="font-weight:bold; color:#3d5a80; margin-top:6px;">Chansons</div>
+        <div style="font-size:14px;">On chante à tue-tête, les portes ouvertes !</div>
+      </div>
+      <div class="kt-card">
+        <svg viewBox="0 0 60 60" style="width:52px; height:52px;"><path d="M10,14 q20,-6 40,0 v32 q-20,-6 -40,0 Z" fill="#fffaf0" stroke="#b08d57" stroke-width="3"/><path d="M30,14 v32 M16,22 h8 M16,30 h8 M36,22 h8 M36,30 h8" stroke="#c9a86a" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <div style="font-weight:bold; color:#3d5a80; margin-top:6px;">Évangile</div>
+        <div style="font-size:14px;">Les belles histoires de Jésus, racontées comme des aventures.</div>
+      </div>
+      <div class="kt-card">
+        <svg viewBox="0 0 60 60" style="width:52px; height:52px;"><path d="M18,26 v-6 a12,12 0 0 1 24,0 v6" fill="none" stroke="#8a6d3b" stroke-width="3"/><path d="M14,26 h32 v6 a16,10 0 0 1 -32,0 Z" fill="#d4a373" stroke="#8a6d3b" stroke-width="3"/><circle cx="22" cy="26" r="2.5" fill="#fff"/><circle cx="30" cy="26" r="2.5" fill="#fff"/><circle cx="38" cy="26" r="2.5" fill="#fff"/><path d="M22,42 v6 M38,42 v6" stroke="#8a6d3b" stroke-width="3" stroke-linecap="round"/></svg>
+        <div style="font-weight:bold; color:#3d5a80; margin-top:6px;">Chapelet</div>
+        <div style="font-size:14px;">On prie le chapelet avec Marie, comme une grande famille.</div>
+      </div>
+      <div class="kt-card">
+        <svg viewBox="0 0 60 60" style="width:52px; height:52px;"><path d="M14,44 l4,-18 h24 l4,18 Z" fill="#f4a259" stroke="#d97706" stroke-width="3" stroke-linejoin="round"/><path d="M18,26 a12,8 0 0 1 24,0" fill="#fff" stroke="#d97706" stroke-width="3"/><circle cx="30" cy="18" r="4" fill="#e63946"/></svg>
+        <div style="font-weight:bold; color:#3d5a80; margin-top:6px;">Goûter</div>
+        <div style="font-size:14px;">Crêpes, gâteaux et jus… à partager tous ensemble !</div>
+      </div>
+      <div class="kt-card">
+        <svg viewBox="0 0 60 60" style="width:52px; height:52px;"><path d="M42,12 l6,6 -26,26 -8,2 2,-8 Z" fill="#a9c6ea" stroke="#4d6fa0" stroke-width="3" stroke-linejoin="round"/><path d="M38,16 l6,6" stroke="#4d6fa0" stroke-width="3"/></svg>
+        <div style="font-weight:bold; color:#3d5a80; margin-top:6px;">Dessin</div>
+        <div style="font-size:14px;">On colorie la brebis, la colombe et l'étoile !</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-dates" class="kt-page">
+    <div class="kt-card" style="max-width:440px; margin:0 auto; text-align:left;">
+      <div style="font-weight:bold; color:#c65d3b; font-size:clamp(16px,3vw,19px); margin-bottom:8px; text-align:center;">🗓️ Nos lundis au Caté · 16h30 – 18h30</div>
+      <div style="line-height:2.1; font-size:clamp(14px,2.8vw,16.5px);">
+        ✏️ <b>Lundi 14 septembre</b> 2026<br>
+        🍂 <b>Lundi 12 octobre</b> 2026<br>
+        🍁 <b>Lundi 9 novembre</b> 2026<br>
+        🎄 <b>Lundi 7 décembre</b> 2026<br>
+        ⛄ <b>Lundi 11 janvier</b> 2027
+      </div>
+      <div style="margin-top:10px; padding:10px; border:2px dashed #c9a86a; border-radius:12px; text-align:center; font-size:14.5px; color:#9c6644;">
+        ➕ <i>Prochaines dates bientôt annoncées…</i>
+      </div>
+      <div style="margin-top:10px; padding-top:10px; border-top:2px dashed #c9a86a; font-size:14px; text-align:center;">
+        📍 Salle paroissiale de Marthod · 🍪 Goûter offert · Entrée libre
+      </div>
+    </div>
+    <p style="color:#8a6d3b; margin-top:12px; font-size:14px;">(Pensez à vérifier les dates à l'église !)</p>
+  </div>
+
+  <div id="page-inscription" class="kt-page">
+    <form id="kt-form" style="max-width:420px; margin:0 auto; text-align:left;" onsubmit="ktSubmit(event)">
+      <label class="kt-label">Prénom de l'enfant 😊</label>
+      <input class="kt-field" required placeholder="Ex : Léa">
+      <label class="kt-label">Âge 👦👧</label>
+      <select class="kt-field" required>
+        <option value="">Choisis...</option><option>6 ans</option><option>7 ans</option><option>8 ans</option><option>9 ans</option><option>10 ans</option><option>11 ans</option><option>12 ans</option>
+      </select>
+      <label class="kt-label">Nom du parent 🧑</label>
+      <input class="kt-field" required placeholder="Ex : Martin">
+      <label class="kt-label">Téléphone 📞</label>
+      <input class="kt-field" type="tel" required placeholder="06 .. .. .. ..">
+      <div style="text-align:center; margin-top:18px;">
+        <button class="kt-btn" type="submit">Envoyer ma demande 🕊️</button>
+      </div>
+      <p style="font-size:13px; color:#8a6d3b; text-align:center; margin-top:10px;">
+        Sinon : après la messe du dimanche, ou au <b style="color:#c65d3b;">06 27 58 76 40</b> 📱
+      </p>
+    </form>
+
+    <div id="kt-merci" style="display:none; position:relative; max-width:420px; margin:10px auto 0; overflow:hidden;">
+      <div id="kt-confetti" style="position:absolute; inset:0; pointer-events:none;"></div>
+      <div class="kt-card" style="padding:28px 20px;">
+        <div style="font-size:46px;">🎉</div>
+        <div style="font-size:clamp(20px,4vw,26px); font-weight:bold; color:#c65d3b; margin:8px 0;">Merci !</div>
+        <div style="font-size:clamp(14px,2.8vw,17px); line-height:1.7;">Ta demande est bien envoyée.<br>On a hâte de te voir au Caté !<br><b>À très vite à Marthod !</b> 🐑🍪</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px; padding-top:12px; border-top:2px dashed #c9a86a; color:#8a6d3b; font-size:clamp(12px,2.4vw,14px);">
+    ⛪ Paroisse Notre-Dame des Cimes · Marthod · 📱 06 27 58 76 40 · ✏️ Fait avec amour pour nos enfants
+  </div>
+</div>
+
+<script>
+function ktGo(page, btn){
+  document.querySelectorAll('.kt-page').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById('page-'+page).classList.add('active');
+  document.querySelectorAll('.kt-tab').forEach(function(t){ t.classList.remove('active'); });
+  if(btn){ btn.classList.add('active'); } else {
+    var b = document.querySelector('[data-page="'+page+'"]'); if(b){ b.classList.add('active'); }
+  }
+}
+function ktSubmit(e){
+  e.preventDefault();
+  document.getElementById('kt-form').style.display='none';
+  var m=document.getElementById('kt-merci'); m.style.display='block';
+  var c=document.getElementById('kt-confetti'); var icons=['🎉','⭐','🎈','🐑','✨','🍪','🕊️'];
+  for(var i=0;i<18;i++){
+    var s=document.createElement('span'); s.className='confetti';
+    s.textContent=icons[i%icons.length];
+    s.style.left=(Math.random()*90+2)+'%';
+    s.style.animationDelay=(Math.random()*1.6)+'s';
+    c.appendChild(s);
+  }
+}
+</script>
+</div>
+
+</body>
+</html>
